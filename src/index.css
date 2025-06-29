@@ -1,5 +1,5 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900'); */
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400..700;1,400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400..700;1,400..700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,13 +13,11 @@
   font-family: "Rubik", serif;
 }
 
-
 .ant-table-thead > tr > th {
-  background-color: #DD7109 !important; /* Blue background */
-  color: white !important; /* White text */
+  background-color: #ebf6fe !important; /* Blue background */
+  color: black !important; /* White text */
+  font-weight: normal !important;
 }
-
-
 
 /* phone Input  */
 .PhoneInputInput {
@@ -73,9 +71,7 @@
   /* Width of the scrollbar */
 }
 
-
 /* Chrome, Edge, and Safari */
-
 
 #message-uesrs::-webkit-scrollbar-track {
   background: transparent;
@@ -83,26 +79,26 @@
 }
 
 #message-uesrs::-webkit-scrollbar-thumb {
-  background: #61D0FF;
+  background: #61d0ff;
   /* Color of the scrollbar thumb */
   border-radius: 20px;
   /* Rounded corners */
 }
 
 #message-uesrs::-webkit-scrollbar-thumb:hover {
-  background: #61D0FF;
+  background: #61d0ff;
   /* Darker thumb when hovered */
 }
 
 /* recent-users-table header backgroundColor */
-.recent-users-table .ant-table-thead>tr>th {
+.recent-users-table .ant-table-thead > tr > th {
   background: #333333;
   text-align: center;
   font-weight: lighter;
   font-size: 18px;
 }
 
-.recent-users-table .ant-table-tbody>.ant-table-row>.ant-table-cell {
+.recent-users-table .ant-table-tbody > .ant-table-row > .ant-table-cell {
   text-align: center;
   border-bottom: 1px solid #b9b5b5;
 }
@@ -110,7 +106,6 @@
 .ant-input:focus {
   border-color: black;
   outline: 0;
-
 }
 
 .ant-input {
@@ -175,17 +170,17 @@
 }
 
 .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="14px"]::before {
-  content: '14';
+  content: "14";
   font-size: 14px !important;
 }
 
 .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="16px"]::before {
-  content: '16';
+  content: "16";
   /* font-size: 16px !important; */
 }
 
 .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="18px"]::before {
-  content: '18';
+  content: "18";
   /* font-size: 18px !important; */
 }
 
@@ -213,7 +208,6 @@
 .ql-snow .ql-picker.ql-size {
   width: 50px !important;
 }
-
 
 /* Change the color picker icon to "T" and a circle */
 .ql-snow .ql-picker.ql-color .ql-picker-label {

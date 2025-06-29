@@ -88,7 +88,7 @@ export default function Subscription() {
             </li>
           </ul>
 
-          <button className="w-full py-3 bg-[#DD7109] hover:bg-amber-700 text-white rounded-full mt-4 transition-colors">
+          <button className="w-full py-3 bg-[#EBF6FE] hover:bg-amber-700 text-white rounded-full mt-4 transition-colors">
             Delete Plan
           </button>
         </div>
@@ -167,7 +167,7 @@ export default function Subscription() {
             </li>
           </ul>
 
-          <button className="w-full py-3 bg-[#DD7109] hover:bg-amber-700 text-white rounded-full mt-4 transition-colors">
+          <button className="w-full py-3 bg-[#EBF6FE] hover:bg-amber-700 text-white rounded-full mt-4 transition-colors">
             Delete Plan
           </button>
         </div>
@@ -246,14 +246,17 @@ export default function Subscription() {
             </li>
           </ul>
 
-          <button className="w-full py-3 bg-[#DD7109] hover:bg-amber-700 text-white rounded-full mt-4 transition-colors">
+          <button className="w-full py-3 bg-[#EBF6FE] hover:bg-amber-700 text-white rounded-full mt-4 transition-colors">
             Delete Plan
           </button>
         </div>
       </div>
 
       <div className="mt-20">
-        <Link to="/add-item" className="flex items-center px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-full transition-colors">
+        <Link
+          to="/add-item"
+          className="flex items-center px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-full transition-colors"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5 mr-2"

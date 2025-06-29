@@ -20,12 +20,12 @@ import Trust from "../pages/Settings/Trust";
 import EditTrust from "../pages/Settings/EditTrust";
 import { TbCash } from "react-icons/tb";
 import { IoSettingsOutline } from "react-icons/io5";
-import { BadgePoundSterling, ShoppingBag } from "lucide-react";
 import AddItem from "../pages/Main/Shop/AddItem";
-import Parties from "../pages/Main/Parties/Subscription";
-import TransactionHome from "../pages/Main/Transaction/TransactionHome";
 import User from "../pages/Main/Shop/User";
 import Subscription from "../pages/Main/Parties/Subscription";
+import Country from "../pages/Main/Transaction/Country";
+import { User2 } from "lucide-react";
+import { TiWorld } from "react-icons/ti";
 
 export const dashboardItems = [
   {
@@ -34,20 +34,21 @@ export const dashboardItems = [
     icon: RiDashboardHorizontalFill,
     element: <DashboardHome />,
   },
-    {
-    name: "Earnings",
-    path: "transaction",
-    icon: BadgePoundSterling,
-    element: <TransactionHome />,
-  },
   {
     name: "User",
     path: "users",
-    icon: ShoppingBag,
+    icon: User2,
     element: <User />,
   },
   {
-    path: "add-item",
+    name: "Country",
+    path: "countries",
+    icon: TiWorld,
+    element: <Country />,
+  },
+
+  {
+    path: "countries/add-item",
     element: <AddItem />,
   },
 
@@ -57,7 +58,6 @@ export const dashboardItems = [
     icon: TbCash,
     element: <Subscription />,
   },
-
 
   {
     name: "Setting",

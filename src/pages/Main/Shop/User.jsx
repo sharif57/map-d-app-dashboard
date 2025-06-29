@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Table, Modal, Button } from "antd";
-import { Eye, Printer } from "lucide-react";
+import { Eye } from "lucide-react";
 
 const User = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,42 +18,65 @@ const User = () => {
 
   const columns = [
     {
+      title: "Image",
+      dataIndex: "image",
+      key: "image",
+      render: () => (
+        <img
+          src="/country.png"
+          alt="User"
+          style={{  borderRadius: "50%" , textAlign: "center",paddingLeft: '30px' }}
+        />
+      ),
+      align: "center",
+    },
+    {
       title: "#SI No.",
       dataIndex: "transIs",
       key: "transIs",
       render: (text) => <a>{text}</a>,
     },
     {
-      title: "User Name",
+      title: "Name",
       dataIndex: "name",
-      key: "name  ",
+      key: "name",
     },
     {
-      title: "Subscription",
-      dataIndex: "Address",
-      key: "Address",
+      title: "Born",
+      dataIndex: "born",
+      key: "born",
+    },
+    {
+      title: "Phone",
+      dataIndex: "phone",
+      key: "phone",
+    },
+    {
+      title: "Email",
+      dataIndex: "email",
+      key: "email",
+    },
+    {
+      title: "Living",
+      dataIndex: "living",
+      key: "living",
+    },
+    {
+      title: "Visited",
+      dataIndex: "visited",
+      key: "visited",
     },
     {
       title: "Date",
       dataIndex: "date",
       key: "date",
     },
-
     {
       title: "Action",
       key: "Action",
       align: "center",
       render: (_, data) => (
-        <Button
-          type="link"
-          onClick={() => showModal(data)}
-          // className="flex items-center"
-        >
-          {/* <img
-            src={exlamIcon}
-            alt="Review"
-            className="w-5 h-5 cursor-pointer"
-          /> */}
+        <Button type="link" onClick={() => showModal(data)}>
           <div className="flex items-center gap-4 ">
             <Eye />
           </div>
@@ -65,9 +88,11 @@ const User = () => {
   const data = Array.from({ length: 17 }, (_, index) => ({
     transIs: `${index + 1}`,
     name: "Henry",
-    Email: "sharif@gmail.com",
-    Address: "Standard",
-    transactionAmount: "$50",
+    born: "1990-01-01",
+    phone: `123-456-789${index}`,
+    email: "sharif@gmail.com",
+    living: "Standard",
+    visited: "$50",
     date: "16 Apr 2024",
     userId: `U-${index + 1}`,
   }));
@@ -76,7 +101,7 @@ const User = () => {
     <div>
       <div className="rounded-lg border py-4   mt-8 recent-users-table text-white bg-white">
         {/* Ant Design Table */}
-        <h1 className="text-2xl font-semibold mb-4 text-black pl-4">User List</h1>
+        <h1 className="text-2xl font-medium mb-4 text-black pl-4">User List</h1>
         <Table
           columns={columns}
           dataSource={data}
