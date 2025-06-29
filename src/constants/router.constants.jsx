@@ -18,14 +18,14 @@ import ForgotPassword from "../pages/Main/Setting/Change-password/ForgotPassword
 import VerifyEmail from "../pages/Main/Setting/Change-password/VerifyEmail";
 import Trust from "../pages/Settings/Trust";
 import EditTrust from "../pages/Settings/EditTrust";
-import { TbCash } from "react-icons/tb";
+import { TbBellRinging } from "react-icons/tb";
 import { IoSettingsOutline } from "react-icons/io5";
 import AddItem from "../pages/Main/Shop/AddItem";
 import User from "../pages/Main/Shop/User";
-import Subscription from "../pages/Main/Parties/Subscription";
 import Country from "../pages/Main/Transaction/Country";
 import { User2 } from "lucide-react";
 import { TiWorld } from "react-icons/ti";
+import Notification from "../pages/Main/Parties/Notification";
 
 export const dashboardItems = [
   {
@@ -53,10 +53,10 @@ export const dashboardItems = [
   },
 
   {
-    name: "Subscription",
-    path: "subscription",
-    icon: TbCash,
-    element: <Subscription />,
+    name: "Notification",
+    path: "notification",
+    icon: TbBellRinging,
+    element: <Notification />,
   },
 
   {
