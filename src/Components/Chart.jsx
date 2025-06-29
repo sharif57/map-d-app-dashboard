@@ -7,6 +7,7 @@ const Chart = () => {
   const onChange = (date, dateString) => {
     console.log(date, dateString);
   };
+
   const [state] = useState({
     series: [
       {
@@ -20,29 +21,28 @@ const Chart = () => {
         height: 350,
         toolbar: { show: false },
         zoom: { enabled: false },
+        dropShadow: {
+          enabled: true,
+          top: 10,
+          left: 0,
+          blur: 8,
+          opacity: 0.25,
+          color: "#3BA7F2",
+        },
       },
       stroke: {
         curve: "smooth",
-        width: 4, // ✅ Bold line
+        width: 4,
+        colors: ["#3BA7F2"],
       },
-      colors: ["#3BA7F2"], // ✅ Strong visible line color
+      colors: ["#3BA7F2"],
       markers: {
-        size: 0,
+        size: 0, // ✅ No dot on line
       },
       xaxis: {
         categories: [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-          "Nov",
-          "Dec",
+          "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
         ],
         labels: {
           style: {
@@ -73,7 +73,10 @@ const Chart = () => {
         },
       },
       fill: {
-        type: "solid", // ✅ No blur or gradient
+        type: "solid",
+      },
+      dataLabels: {
+        enabled: false,
       },
     },
   });
@@ -92,7 +95,7 @@ const Chart = () => {
         </div>
       </div>
       <ReactApexChart
-      className="h-[430px] mt-5"
+        className="h-[430px] mt-5"
         options={state.options}
         series={state.series}
         type="line"
