@@ -18,7 +18,7 @@ const Setting = () => {
                 <NavLink
                   key={inx}
                   to={`/${subPath}`}
-                  className="flex bg-[#fdece9]  justify-between items-center p-4 border border-[#e73e1e] rounded-lg"
+                  className="flex bg-[#E6E6E6]  justify-between items-center p-4 border border-[#E6E6E6] rounded-lg"
                 >
                   <span className="text-[#272727] text-xl"> {subName}</span>
                   <div className="text-lg font-medium text-gray-800">
