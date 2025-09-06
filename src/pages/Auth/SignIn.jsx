@@ -1,25 +1,47 @@
 
 
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { useLoginMutation } from "../../redux/features/authSlice"
+import toast from "react-hot-toast"
 
 export default function SignIn() {
+  const navigate = useNavigate()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [rememberMe, setRememberMe] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
+  const [login] = useLoginMutation()
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsLoading(true)
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      console.log("Login attempt with:", { email, password, rememberMe })
-    } catch (error) {
-      console.error("Login failed:", error)
-    } finally {
+      const res = await login({email, password}).unwrap()
+
+
+      if(res?.success === true) {
+        toast.success(res?.message, 'login successfully')
+        localStorage.setItem("accessToken", res?.access_token)
+        navigate("/")
+      }
+
+      console.log(res?.message, 'login res')
+   } catch (error) {
+  const errorMessage =
+    error?.errors?.non_field_errors?.[0] || 
+    error?.data?.message ||                       
+    "Something went wrong";    
+    console.log(error, 'message')            
+
+  toast.error(errorMessage, "login failed")
+  console.error("Login failed:", errorMessage)
+}
+
+    finally {
       setIsLoading(false)
     }
   }
