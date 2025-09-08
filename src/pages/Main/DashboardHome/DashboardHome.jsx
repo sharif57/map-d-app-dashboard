@@ -2,10 +2,17 @@
 import BarChart from "../../../Components/BarChart";
 import Chart from "../../../Components/Chart";
 import { RecentActivity } from "../../../Components/RecentActivity";
+import { useAdminInfoQuery } from "../../../redux/features/useSlice";
 
 
 
 export default function DashboardHome() {
+
+  const {data} = useAdminInfoQuery();
+  console.log(data?.data, 'admin')
+
+  const admin = data?.data
+
   return (
     <div className="flex flex-col md:flex-row gap-4 p-4">
       <div className="w-[70%]  ">
@@ -33,10 +40,10 @@ export default function DashboardHome() {
             </div>
             <div className="text-center">
               <h3 className="text-[20px]">{"Total Users"}</h3>
-              <h3 className=" text-[#3698DC] font-medium text-[48px]">400</h3>
+              <h3 className=" text-[#3698DC] font-medium text-[48px]">{admin?.total_users}</h3>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-6 px-[24px]  py-[20px] rounded-lg space-y-3 bg-white  md:w-full">
+          {/* <div className="flex items-center justify-center gap-6 px-[24px]  py-[20px] rounded-lg space-y-3 bg-white  md:w-full">
             <div className=" p-6 rounded-2xl">
               <svg
                 width="81"
@@ -52,7 +59,7 @@ export default function DashboardHome() {
                   rx="16"
                   fill="#3698DC"
                 />
-                <g clip-path="url(#clip0_12_10384)">
+                <g clipPath="url(#clip0_12_10384)">
                   <path
                     d="M51.714 41.0825H49.2392C49.4915 41.7731 49.6293 42.5184 49.6293 43.2952V52.6484C49.6293 52.9722 49.5729 53.2831 49.4704 53.5722H53.5617C55.09 53.5722 56.3333 52.3289 56.3333 50.8006V45.7018C56.3334 43.1547 54.2611 41.0825 51.714 41.0825ZM31.0374 43.2953C31.0374 42.5184 31.1752 41.7732 31.4275 41.0826H28.9527C26.4056 41.0826 24.3334 43.1548 24.3334 45.7019V50.8007C24.3334 52.329 25.5767 53.5724 27.105 53.5724H31.1964C31.0911 53.2757 31.0373 52.9632 31.0374 52.6484V43.2953ZM43.1622 38.6759H37.5046C34.9574 38.6759 32.8852 40.7482 32.8852 43.2953V52.6484C32.8852 53.1586 33.2988 53.5723 33.8091 53.5723H46.8577C47.3679 53.5723 47.7816 53.1587 47.7816 52.6484V43.2953C47.7816 40.7482 45.7093 38.6759 43.1622 38.6759ZM40.3334 26.4275C37.2701 26.4275 34.778 28.9196 34.778 31.9829C34.778 34.0607 35.9248 35.8754 37.6184 36.8282C38.4217 37.2801 39.3479 37.5383 40.3334 37.5383C41.3189 37.5383 42.245 37.2801 43.0483 36.8282C44.742 35.8754 45.8887 34.0607 45.8887 31.9829C45.8887 28.9197 43.3966 26.4275 40.3334 26.4275ZM30.5782 31.6056C28.2873 31.6056 26.4236 33.4693 26.4236 35.7602C26.4236 38.0512 28.2873 39.9149 30.5782 39.9149C31.1412 39.9154 31.6984 39.8008 32.2154 39.5782C33.0846 39.204 33.8012 38.5416 34.2446 37.7119C34.5659 37.1116 34.7336 36.4411 34.7329 35.7602C34.7329 33.4694 32.8692 31.6056 30.5782 31.6056ZM50.0885 31.6056C47.7976 31.6056 45.9338 33.4693 45.9338 35.7602C45.9331 36.4411 46.1009 37.1116 46.4221 37.7119C46.8656 38.5417 47.5822 39.2041 48.4513 39.5782C48.9684 39.8008 49.5255 39.9154 50.0885 39.9149C52.3794 39.9149 54.2432 38.0512 54.2432 35.7602C54.2432 33.4693 52.3794 31.6056 50.0885 31.6056Z"
                     fill="white"
@@ -74,7 +81,7 @@ export default function DashboardHome() {
               <h3 className="text-[20px]">{"New users"}</h3>
               <h3 className=" text-[#3698DC] font-medium text-[48px]">100</h3>
             </div>
-          </div>
+          </div> */}
           <div className="flex items-center justify-center gap-6 px-[24px]  py-[20px] rounded-lg space-y-3 bg-white  md:w-full">
             <div className=" p-6 rounded-2xl">
               <svg
@@ -111,7 +118,7 @@ export default function DashboardHome() {
             </div>
             <div className="text-center">
               <h3 className="text-[20px]">{"Travelling"}</h3>
-              <h3 className=" text-[#3698DC] font-medium text-[48px]">9,000</h3>
+              <h3 className=" text-[#3698DC] font-medium text-[48px]">{admin?.total_travelled_users || 0}</h3>
             </div>
           </div>
         </div>

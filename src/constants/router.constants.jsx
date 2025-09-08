@@ -52,12 +52,12 @@ export const dashboardItems = [
     element: <AddItem />,
   },
 
-  {
-    name: "Notification",
-    path: "notification",
-    icon: TbBellRinging,
-    element: <Notification />,
-  },
+  // {
+  //   name: "Notification",
+  //   path: "notification",
+  //   icon: TbBellRinging,
+  //   element: <Notification />,
+  // },
 
   {
     name: "Setting",

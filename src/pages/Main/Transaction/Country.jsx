@@ -1,54 +1,276 @@
-import { Search, Edit2, Trash2, Globe } from "lucide-react";
+// import { Search, Edit2 } from "lucide-react";
+// import { Link } from "react-router-dom";
+// import { useAllCountryListQuery } from "../../../redux/features/useSlice";
+
+// export default function Country() {
+
+
+//   const {data} = useAllCountryListQuery();
+//   console.log(data)
+
+//   const countries = [
+//     {
+//       id: "#123490",
+//       name: "Bangladesh",
+//       region: "Islam",
+//       capital: "Dhaka",
+//       continent: "Asia",
+//       language: "Bangla",
+//       population: "25 million",
+//     },
+//     {
+//       id: "#123499",
+//       name: "Bangladesh",
+//       region: "Islam",
+//       capital: "Dhaka",
+//       continent: "Asia",
+//       language: "Bangla",
+//       population: "25 million",
+//     },
+//     {
+//       id: "#123490",
+//       name: "Bangladesh",
+//       region: "Islam",
+//       capital: "Dhaka",
+//       continent: "Asia",
+//       language: "Bangla",
+//       population: "25 million",
+//     },
+//     {
+//       id: "#123491",
+//       name: "Bangladesh",
+//       region: "Islam",
+//       capital: "Dhaka",
+//       continent: "Asia",
+//       language: "Bangla",
+//       population: "25 million",
+//     },
+//   ];
+
+//   return (
+//     <div className=" ">
+//       <div className="w-full mx-auto">
+//         {/* Header Section */}
+//         <div className="bg-white rounded-lg shadow-sm p-4 mb-6">
+//           <div className="flex items-center justify-between">
+//             <div className="flex items-center gap-4">
+              
+
+//               <div>
+//                 <p className="text-gray-600 text-sm">Total Countries</p>
+//                 <p className="text-2xl font-semibold text-gray-900">120</p>
+//               </div>
+//             </div>
+//             <Link to={"/countries/add-item"}>
+//               <button className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-full text-sm font-medium">
+//                 Add New
+//               </button>
+//             </Link>
+//           </div>
+//         </div>
+
+//         {/* Country List Section */}
+//         <div className="bg-white rounded-lg shadow-sm">
+//           <div className="p-6 border-b border-gray-200">
+//             <div className="flex items-center gap-2">
+//               <h2 className="text-xl font-semibold text-gray-900">
+//                 Country List
+//               </h2>
+//               <Search className="w-5 h-5 text-gray-400" />
+//             </div>
+//           </div>
+
+//           {/* Table */}
+//           <div className="overflow-x-auto">
+//             <table className="w-full">
+//               <thead className="bg-gray-50">
+//                 <tr>
+//                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     Image
+//                   </th>
+//                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     #Land
+//                   </th>
+//                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     Name
+//                   </th>
+//                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     Region
+//                   </th>
+//                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     Capital city
+//                   </th>
+//                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     Continent
+//                   </th>
+//                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     Language
+//                   </th>
+//                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     Population
+//                   </th>
+//                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+//                     Action
+//                   </th>
+//                 </tr>
+//               </thead>
+//               <tbody className="bg-white divide-y divide-gray-200">
+//                 {countries.map((country, index) => (
+//                   <tr key={index} className="hover:bg-gray-50">
+//                     <td className="px-6 py-4 whitespace-nowrap">
+//                       <div className="w-8 h-6 rounded overflow-hidden">
+//                         {/* German Flag */}
+//                         <div className="w-full h-full flex flex-col">
+//                           <div className="flex-1 bg-black"></div>
+//                           <div className="flex-1 bg-red-600"></div>
+//                           <div className="flex-1 bg-yellow-400"></div>
+//                         </div>
+//                       </div>
+//                     </td>
+//                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+//                       {country.id}
+//                     </td>
+//                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+//                       {country.name}
+//                     </td>
+//                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+//                       {country.region}
+//                     </td>
+//                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+//                       {country.capital}
+//                     </td>
+//                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+//                       {country.continent}
+//                     </td>
+//                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+//                       {country.language}
+//                     </td>
+//                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+//                       {country.population}
+//                     </td>
+//                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+//                       <div className="flex items-center gap-2">
+//                         <button className="p-1 hover:bg-gray-100 rounded">
+//                           <Edit2 className="w-4 h-4 text-gray-400" />
+//                         </button>
+                        
+//                       </div>
+//                     </td>
+//                   </tr>
+//                 ))}
+//               </tbody>
+//             </table>
+//           </div>
+
+//           {/* Pagination */}
+//           <div className="px-6 py-4 border-t border-gray-200">
+//             <div className="flex items-center justify-center gap-2">
+//               <button className="px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded">
+//                 {"< Back"}
+//               </button>
+//               <button className="px-3 py-1 text-sm bg-blue-500 text-white rounded">
+//                 1
+//               </button>
+//               <span className="px-2 text-sm text-gray-500">...</span>
+//               <button className="px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded">
+//                 5
+//               </button>
+//               <button className="px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded">
+//                 {"Next >"}
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+import { useState } from "react";
+import { Search, Edit2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useAllCountryListQuery, useUpdateCountryMutation } from "../../../redux/features/useSlice";
+import { Modal, Form, Input, Button } from "antd";
 
 export default function Country() {
-  const countries = [
-    {
-      id: "#123490",
-      name: "Bangladesh",
-      region: "Islam",
-      capital: "Dhaka",
-      continent: "Asia",
-      language: "Bangla",
-      population: "25 million",
-    },
-    {
-      id: "#123499",
-      name: "Bangladesh",
-      region: "Islam",
-      capital: "Dhaka",
-      continent: "Asia",
-      language: "Bangla",
-      population: "25 million",
-    },
-    {
-      id: "#123490",
-      name: "Bangladesh",
-      region: "Islam",
-      capital: "Dhaka",
-      continent: "Asia",
-      language: "Bangla",
-      population: "25 million",
-    },
-    {
-      id: "#123491",
-      name: "Bangladesh",
-      region: "Islam",
-      capital: "Dhaka",
-      continent: "Asia",
-      language: "Bangla",
-      population: "25 million",
-    },
-  ];
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState(null);
+  const [form] = Form.useForm();
+  const pageSize = 10; // Assuming 10 items per page
+
+  const { data, isLoading, isError } = useAllCountryListQuery({ page: currentPage });
+  console.log(data, "countryList");
+
+  const [updateCountry] = useUpdateCountryMutation();
+
+  // Map API data to table data
+  const countries = data?.data?.map((country, index) => ({
+    id: `#${country.country_code.toUpperCase()}${1000 + index}`,
+    name: country.country_name || "N/A",
+    region: country.region || "N/A",
+    capital: country.capital || "N/A",
+    continent: country.continent || "N/A",
+    language: country.official_language || "N/A",
+    population: country.population ? `${(country.population / 1000000).toFixed(2)} million` : "N/A",
+    country_code: country.country_code,
+    status: country.status || "N/A",
+  })) || [];
+
+  // Handle pagination
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  // Handle edit button click
+  const showModal = (country) => {
+    setSelectedCountry(country);
+    setIsModalOpen(true);
+    form.setFieldsValue({
+      name: country.name,
+      region: country.region,
+      capital: country.capital,
+      continent: country.continent,
+      language: country.language,
+      population: country.population.replace(" million", ""),
+      status: country.status,
+    });
+  };
+
+  // Handle modal close
+  const handleCancel = () => {
+    setIsModalOpen(false);
+    setSelectedCountry(null);
+    form.resetFields();
+  };
+
+  // Handle form submission (simulated update)
+  const handleUpdate =async (values) => {
+    const data = {
+      
+        population: Number(values.population),
+      }
+
+    try {
+      const res = await updateCountry({
+        data, id: selectedCountry.country_code,
+      })
+      console.log(res, "res");
+    } catch (error) {
+      console.log(error, "error");
+    }
+
+    console.log("Updated country data:", { ...selectedCountry, ...values });
+    // TODO: Integrate with update API endpoint here
+    handleCancel();
+  };
 
   return (
-    <div className=" ">
-      <div className="w-full mx-auto">
-        {/* Header Section */}
-        <div className="bg-white rounded-lg shadow-sm p-4 mb-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <svg
+    <div className="w-full mx-auto">
+      {/* Header Section */}
+      <div className="bg-white rounded-lg shadow-sm p-4 mb-6">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+      <svg
                 width="80"
                 height="80"
                 viewBox="0 0 80 80"
@@ -75,134 +297,147 @@ export default function Country() {
                   fill="white"
                 />
               </svg>
-
-              <div>
-                <p className="text-gray-600 text-sm">Total Countries</p>
-                <p className="text-2xl font-semibold text-gray-900">120</p>
-              </div>
+            <div>
+              <p className="text-gray-600 text-sm">Total Countries</p>
+              <p className="text-2xl font-semibold text-gray-900">{data?.data?.length || 0}</p>
             </div>
-            <Link to={"/countries/add-item"}>
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-full text-sm font-medium">
-                Add New
-              </button>
-            </Link>
           </div>
+      
         </div>
 
         {/* Country List Section */}
         <div className="bg-white rounded-lg shadow-sm">
           <div className="p-6 border-b border-gray-200">
             <div className="flex items-center gap-2">
-              <h2 className="text-xl font-semibold text-gray-900">
-                Country List
-              </h2>
-              <Search className="w-5 h-5 text-gray-400" />
+              <h2 className="text-xl font-semibold text-gray-900">Country List</h2>
             </div>
           </div>
 
           {/* Table */}
           <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Image
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    #Land
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Name
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Region
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Capital city
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Continent
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Language
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Population
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Action
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {countries.map((country, index) => (
-                  <tr key={index} className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="w-8 h-6 rounded overflow-hidden">
-                        {/* German Flag */}
-                        <div className="w-full h-full flex flex-col">
-                          <div className="flex-1 bg-black"></div>
-                          <div className="flex-1 bg-red-600"></div>
-                          <div className="flex-1 bg-yellow-400"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {country.id}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {country.name}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {country.region}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {country.capital}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {country.continent}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {country.language}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {country.population}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      <div className="flex items-center gap-2">
-                        <button className="p-1 hover:bg-gray-100 rounded">
-                          <Edit2 className="w-4 h-4 text-gray-400" />
-                        </button>
-                        <button className="p-1 hover:bg-gray-100 rounded">
-                          <Trash2 className="w-4 h-4 text-gray-400" />
-                        </button>
-                      </div>
-                    </td>
+            {isLoading && <p className="p-6">Loading...</p>}
+            {isError && <p className="p-6 text-red-500">Error fetching countries. Please try again.</p>}
+            {!isLoading && !isError && (
+              <table className="w-full">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Image
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      #Land
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Name
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Region
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Capital City
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Continent
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Language
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Population
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Status
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Action
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {countries.map((country, index) => (
+                    <tr key={index} className="hover:bg-gray-50">
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="w-8 h-6 rounded overflow-hidden">
+                          <img
+                            src={`https://flagcdn.com/16x12/${country.country_code}.png`}
+                            alt={`${country.name} flag`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{country.id}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{country.name}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{country.region}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{country.capital}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{country.continent}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{country.language}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{country.population}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{country.status}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        <div className="flex items-center gap-2">
+                          <button
+                            className="p-1 hover:bg-gray-100 rounded"
+                            onClick={() => showModal(country)}
+                          >
+                            <Edit2 className="w-4 h-4 text-gray-400" />
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
           </div>
 
           {/* Pagination */}
           <div className="px-6 py-4 border-t border-gray-200">
             <div className="flex items-center justify-center gap-2">
-              <button className="px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded">
+              <button
+                className="px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded disabled:opacity-50"
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+              >
                 {"< Back"}
               </button>
               <button className="px-3 py-1 text-sm bg-blue-500 text-white rounded">
-                1
+                {currentPage}
               </button>
               <span className="px-2 text-sm text-gray-500">...</span>
-              <button className="px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded">
-                5
-              </button>
-              <button className="px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded">
+              <button
+                className="px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded disabled:opacity-50"
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={countries.length < pageSize}
+              >
                 {"Next >"}
               </button>
             </div>
           </div>
         </div>
+
+        {/* Edit Modal */}
+        <Modal
+          title="Edit Country"
+          open={isModalOpen}
+          onCancel={handleCancel}
+          footer={null}
+        >
+          <Form form={form} onFinish={handleUpdate} layout="vertical">
+           
+          
+            <Form.Item name="population" label="Population (in millions)">
+              <Input type="number" step="0.01" />
+            </Form.Item>
+           
+
+            <div className="flex justify-end gap-2">
+              <Button onClick={handleCancel}>Cancel</Button>
+              <Button type="primary" htmlType="submit">
+                Update
+              </Button>
+            </div>
+          </Form>
+        </Modal>
       </div>
     </div>
   );

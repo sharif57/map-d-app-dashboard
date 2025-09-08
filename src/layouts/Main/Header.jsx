@@ -5,12 +5,16 @@ import profileImage from "../../assets/images/dash-profile.png";
 import { TbBellRinging } from "react-icons/tb";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { Select } from 'antd';
+import { useUserProfileQuery } from "../../redux/features/useSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const loacatin = useLocation();
   const notificationRef = useRef(null);
   const [, setNotificationPopup] = useState(false);
+
+  const {data} = useUserProfileQuery();
+  console.log(data, "data");
 
   const handleChange = (value) => {
     console.log(`selected ${value}`);

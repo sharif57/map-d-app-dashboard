@@ -169,11 +169,11 @@ export default function VerifyEmail() {
     const pastedData = e.clipboardData.getData("text");
     if (!/^\d+$/.test(pastedData)) return;
 
-    const digits = pastedData.substring(0, 6).split("");
+    const digits = pastedData.substring(0, 4).split("");
     const newOtp = [...otp];
 
     digits.forEach((digit, index) => {
-      if (index < 6) newOtp[index] = digit;
+      if (index < 4) newOtp[index] = digit;
     });
 
     setOtp(newOtp);
@@ -189,7 +189,7 @@ export default function VerifyEmail() {
   const handleVerify = async () => {
     setIsLoading(true);
     try {
-      const otpValue = otp.join(""); // ✅ 
+      const otpValue = otp.join(""); 
 
       const res = await verifyEmail({ otp: Number(otpValue) }).unwrap();
       console.log(res, "res");
@@ -209,7 +209,6 @@ export default function VerifyEmail() {
         error?.errors?.non_field_errors?.[0] ||
         "Something went wrong";
 
-      // ✅ Handle field-specific errors (like otp length)
       if (error?.data?.errors) {
         const fieldErrors = Object.values(error.data.errors)
           .flat()
@@ -224,7 +223,7 @@ export default function VerifyEmail() {
     }
   };
 
-  return (
+  return ( 
     <div className="flex flex-col md:flex-row h-screen bg-white">
       {/* Verification Form Section */}
       <div className="w-full flex items-center justify-center bg-[#E6E6E6] p-4">

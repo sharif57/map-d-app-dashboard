@@ -5,15 +5,23 @@ export const userApi = baseApi.injectEndpoints({
 
     userProfile: builder.query({
       query: () => ({
-        url: "/profile",
+        url: "/accounts/update-profile/",
         method: "GET",
       }),
       providesTags: ["User"],
     }),
 
+    // userList: builder.query({
+    //   query: () => ({
+    //     url: "/accounts/dashboard/users-list/",
+    //     method: "GET",
+    //   }),
+    //   providesTags: ["User"],
+    // }),
+
     userList: builder.query({
-      query: () => ({
-        url: "/auth/user_details/",
+      query: ({ page = 1 }) => ({
+        url: `/accounts/dashboard/users-list/?page=${page}`,
         method: "GET",
       }),
       providesTags: ["User"],
@@ -28,9 +36,34 @@ export const userApi = baseApi.injectEndpoints({
       invalidatesTags: ["User"],
     }),
 
+    adminInfo: builder.query({
+      query: () => ({
+        url: "/leaderboard/admin/dashboard/",
+        method: "GET",
+      }),
+      providesTags: ["User"],
+    }),
+
+    allCountryList: builder.query({
+      query: () => ({
+        url: "/leaderboard/dashboard/all-countries/",
+        method: "GET",
+      }),
+      providesTags: ["User"],
+    }),
+
+    updateCountry: builder.mutation({
+      query: ({data, id}) => ({
+        url: `/locations/country/manage/${id}/`,
+        method: "PUT",
+        body: data,
+      }),
+      invalidatesTags: ["User"],
+    }),
+
  
 
   }),
 });
 
-export const {useUserProfileQuery, useUserListQuery, useUpdateProfileMutation} = userApi;
+export const {useUserProfileQuery, useUserListQuery, useUpdateProfileMutation , useAdminInfoQuery, useAllCountryListQuery , useUpdateCountryMutation} = userApi;
