@@ -4,7 +4,7 @@ export const privacyApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     privacyPolicies: builder.query({
       query: () => ({
-        url: "/settings/privacy_policies/",
+        url: "/privacy_policy/privacy-policy/",
         method: "GET",
       }),
       providesTags: ["Privacy"],
@@ -12,7 +12,7 @@ export const privacyApi = baseApi.injectEndpoints({
 
       updatePrivacyPolicy: builder.mutation({
       query: (data) => ({
-        url: "/settings/privacy_policies/",
+        url: "/privacy_policy/privacy-policy/",
         method: "PUT",
         body: data,
         headers: {
@@ -24,7 +24,7 @@ export const privacyApi = baseApi.injectEndpoints({
 
       terms: builder.query({
       query: () => ({
-        url: "/settings/terms_conditions/",
+        url: "/privacy_policy/terms-conditions/",
         method: "GET",
       }),
       providesTags: ["Privacy"],
@@ -32,7 +32,28 @@ export const privacyApi = baseApi.injectEndpoints({
 
       updateTerms: builder.mutation({
       query: (data) => ({
-        url: "/settings/terms_conditions/",
+        url: "/privacy_policy/terms-conditions/",
+        method: "PUT",
+        body: data,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }),
+      invalidatesTags: ["Privacy"],
+    }),
+
+    // trust-safety/
+    trustSafety: builder.query({
+      query: () => ({
+        url: "/privacy_policy/trust-safety/",
+        method: "GET",
+      }),
+      providesTags: ["Privacy"],
+    }),
+
+    updateTrustSafety: builder.mutation({
+      query: (data) => ({
+        url: "/privacy_policy/trust-safety/",
         method: "PUT",
         body: data,
         headers: {
@@ -45,4 +66,4 @@ export const privacyApi = baseApi.injectEndpoints({
   }),
 });
 
-export const {usePrivacyPoliciesQuery, useUpdatePrivacyPolicyMutation, useTermsQuery, useUpdateTermsMutation} = privacyApi;
+export const {usePrivacyPoliciesQuery, useUpdatePrivacyPolicyMutation, useTermsQuery, useUpdateTermsMutation, useTrustSafetyQuery, useUpdateTrustSafetyMutation} = privacyApi;
