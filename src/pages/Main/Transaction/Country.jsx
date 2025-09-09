@@ -186,8 +186,7 @@
 //   );
 // }
 import { useState } from "react";
-import { Search, Edit2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import {  Edit2 } from "lucide-react";
 import { useAllCountryListQuery, useUpdateCountryMutation } from "../../../redux/features/useSlice";
 import { Modal, Form, Input, Button } from "antd";
 
@@ -211,7 +210,7 @@ export default function Country() {
     capital: country.capital || "N/A",
     continent: country.continent || "N/A",
     language: country.official_language || "N/A",
-    population: country.population ? `${(country.population / 1000000).toFixed(2)} million` : "N/A",
+    population: country.population || "N/A",
     country_code: country.country_code,
     status: country.status || "N/A",
   })) || [];
@@ -246,8 +245,14 @@ export default function Country() {
   // Handle form submission (simulated update)
   const handleUpdate =async (values) => {
     const data = {
-      
         population: Number(values.population),
+        status: values.status,
+        country_name: values.name,
+        region: values.region,
+        capital: values.capital,
+        // continent: values.continent,
+        official_language: values.language
+
       }
 
     try {
@@ -415,6 +420,14 @@ export default function Country() {
           </div>
         </div>
 
+
+{/* "continent": "Asia",
+  "capital": "Dhaka",
+  "constituent_of": "Republic",
+  "region": "Islam",
+  "official_language": "Bengali",
+  "population": 147570658,
+  "status": "Poor" */}
         {/* Edit Modal */}
         <Modal
           title="Edit Country"
@@ -427,6 +440,24 @@ export default function Country() {
           
             <Form.Item name="population" label="Population (in millions)">
               <Input type="number" step="0.01" />
+            </Form.Item>
+            <Form.Item name="status" label="Status">
+              <Input />
+            </Form.Item>  
+            <Form.Item name="official_language" label="Official Language">
+              <Input />
+            </Form.Item>
+            <Form.Item name="constituent_of" label="Constituent Of">
+              <Input />
+            </Form.Item>
+            <Form.Item name="region" label="Region">
+              <Input />
+            </Form.Item>
+            <Form.Item name="capital" label="Capital">
+              <Input />
+            </Form.Item>
+            <Form.Item name="continent" label="Continent">
+              <Input />
             </Form.Item>
            
 

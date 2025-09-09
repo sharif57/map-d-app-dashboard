@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
-import profileImage from "../../assets/images/dash-profile.png";
+import { Link, useLocation } from "react-router-dom";
 
 import { useUserProfileQuery } from "../../redux/features/useSlice";
 
@@ -39,7 +38,8 @@ const Header = () => {
 
   return (
 
-    <div className="w-full h-[88px] text-black flex justify-between items-center rounded-lg py-[16px] px-[32px] shadow-lg bg-[#FFFFFF] border ">
+    <div className="w-full h-[88px] text-black flex justify-between items-
+    center rounded-lg py-[16px] px-[32px] shadow-lg bg-[#FFFFFF] border ">
       <div className="text-start space-y-0.5">
         <p className="text-sm md:text-xl font-light">
           {`Welcome, ${data?.data?.user?.username}`}
@@ -49,9 +49,9 @@ const Header = () => {
       <div className="flex gap-x-[41px]">
       
         <div className="flex items-center">
-          <div>
+          <Link to='/settings/profile'>
             <img src={`${IMAGE}${data?.data?.user?.profile_pic}`} alt="" className="rounded-full h-[42px] w-[42px]" />
-          </div>
+          </Link>
           
         </div>
       </div>
