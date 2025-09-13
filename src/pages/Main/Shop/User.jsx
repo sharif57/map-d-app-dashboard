@@ -11,11 +11,9 @@ const User = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const tableRef = useRef(null);
 
-  // Fetch user list data with pagination
   const { data: userList, isLoading, isError } = useUserListQuery({ page: currentPage });
   console.log(userList, "userList");
 
-  // Map API data to table dataSource
   const dataSource = userList?.results?.map((user, index) => ({
     key: user.id,
     transIs: `${(currentPage - 1) * 20 + index + 1}`, // Assuming 20 items per page
@@ -34,24 +32,19 @@ const User = () => {
     profile_pic: user.profile_pic || "/media/default_profile_pic.png",
   })) || [];
 
-  // Handle modal show
   const showModal = (data) => {
     setSelectedUser(data);
     setIsModalOpen(true);
   };
 
-  // Handle modal close
   const handleCancel = () => {
     setIsModalOpen(false);
     setSelectedUser(null);
   };
 
-  // Handle page change
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
-
-  // Download table as PNG
   const handleDownloadPNG = () => {
     if (tableRef.current) {
       html2canvas(tableRef.current).then((canvas) => {
@@ -220,3 +213,4 @@ const User = () => {
 };
 
 export default User;
+
