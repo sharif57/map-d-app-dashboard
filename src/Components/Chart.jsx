@@ -238,9 +238,9 @@ const Chart = () => {
           {/* <p className="text-[#3698DC] font-medium text-[20px]">
             1 Jan 24 - 5 Jan 25
           </p> */}
-          <div>
+          {/* <div>
             <DatePicker onChange={onChange} picker="month" />
-          </div>
+          </div> */}
         </div>
       </div>
       <ReactApexChart

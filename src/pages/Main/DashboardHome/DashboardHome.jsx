@@ -127,9 +127,9 @@ export default function DashboardHome() {
         </div>
       
       </div>
-      <div className="w-[30%] ">
+      <div className="w-[30%] -mt-4 ">
         <div>
-          <RecentActivity />
+          {/* <RecentActivity /> */}
         </div>
         <div>
           <BarChart />
