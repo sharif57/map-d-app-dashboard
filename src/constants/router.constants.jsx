@@ -24,6 +24,8 @@ import User from "../pages/Main/Shop/User";
 import Country from "../pages/Main/Transaction/Country";
 import { User2 } from "lucide-react";
 import { TiWorld } from "react-icons/ti";
+import AboutUs from "../pages/Settings/AboutUs";
+import EditAboutUs from "../pages/Settings/EditAboutUs";
 
 export const dashboardItems = [
   {
@@ -95,6 +97,16 @@ export const dashboardItems = [
       {
         path: "settings/change-password/forgot-password/verify-email",
         element: <VerifyEmail />,
+      },
+      {
+        name: "About Us",
+        icon: FaServicestack,
+        path: "settings/about-us",
+        element: <AboutUs />,
+      },
+      {
+        path: "settings/about-us/edit",
+        element: <EditAboutUs />,
       },
       {
         name: "Terms & Condition",

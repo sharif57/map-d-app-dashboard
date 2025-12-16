@@ -3,7 +3,6 @@ import { useState, useRef } from "react";
 import { Table, Modal, Button } from "antd";
 import { Eye } from "lucide-react";
 import { useUserListQuery } from "../../../redux/features/useSlice";
-import html2canvas from "html2canvas";
 
 const User = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -45,16 +44,16 @@ const User = () => {
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
-  const handleDownloadPNG = () => {
-    if (tableRef.current) {
-      html2canvas(tableRef.current).then((canvas) => {
-        const link = document.createElement("a");
-        link.download = "user-list.png";
-        link.href = canvas.toDataURL("image/png");
-        link.click();
-      });
-    }
-  };
+  // const handleDownloadPNG = () => {
+  //   if (tableRef.current) {
+  //     html2canvas(tableRef.current).then((canvas) => {
+  //       const link = document.createElement("a");
+  //       link.download = "user-list.png";
+  //       link.href = canvas.toDataURL("image/png");
+  //       link.click();
+  //     });
+  //   }
+  // };
 
   const IMAGE = import.meta.env.VITE_API_URL
 
@@ -200,9 +199,9 @@ const User = () => {
               </div>
               <Button
                 className="bg-[#101010] py-6 text-white w-full hover:bg-gray-800"
-                onClick={handleDownloadPNG}
+                onClick={handleCancel}
               >
-                Download Table as PNG
+                Close
               </Button>
             </div>
           )}
