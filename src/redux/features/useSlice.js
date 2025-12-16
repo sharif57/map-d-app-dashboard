@@ -61,9 +61,18 @@ export const userApi = baseApi.injectEndpoints({
       invalidatesTags: ["User"],
     }),
 
+    // all-continents/
+    allContinents: builder.query({
+      query: () => ({
+        url: "/locations/all-continents/",
+        method: "GET",
+      }),
+      providesTags: ["User"],
+    })
+
  
 
   }),
 });
 
-export const {useUserProfileQuery, useUserListQuery, useUpdateProfileMutation , useAdminInfoQuery, useAllCountryListQuery , useUpdateCountryMutation} = userApi;
+export const {useUserProfileQuery, useUserListQuery, useUpdateProfileMutation , useAdminInfoQuery, useAllCountryListQuery , useUpdateCountryMutation , useAllContinentsQuery} = userApi;
