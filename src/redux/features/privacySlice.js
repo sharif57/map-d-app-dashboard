@@ -82,9 +82,61 @@ export const privacyApi = baseApi.injectEndpoints({
         },
       }),
       invalidatesTags: ["Privacy"],
-    })
+    }),
+
+    // our-story/
+    updateOurStory: builder.mutation({
+      query: (data) => ({
+        url: "/privacy_policy/our-story/",
+        method: "PUT",
+        body: data,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }),
+      invalidatesTags: ["Privacy"],
+    }),
+
+    // data-management/
+    updateDataManagement: builder.mutation({
+      query: (data) => ({
+        url: "/privacy_policy/data-management/",
+        method: "PUT",
+        body: data,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }),
+      invalidatesTags: ["Privacy"],
+    }),
+
+    // account-management/
+    updateAccountManagement: builder.mutation({
+      query: (data) => ({
+        url: "/privacy_policy/account-management/",
+        method: "PUT",
+        body: data,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }),
+      invalidatesTags: ["Privacy"],
+    }),
+
+    // payment-queries/
+    updatePaymentQueries: builder.mutation({
+      query: (data) => ({
+        url: "/privacy_policy/payment-queries/",
+        method: "PUT",
+        body: data,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }),
+      invalidatesTags: ["Privacy"],
+    }),
 
   }),
 });
 
-export const {usePrivacyPoliciesQuery, useUpdatePrivacyPolicyMutation, useTermsQuery, useUpdateTermsMutation, useTrustSafetyQuery, useUpdateTrustSafetyMutation, useAboutUsQuery, useUpdateAboutUsMutation} = privacyApi;
+export const {usePrivacyPoliciesQuery, useUpdatePrivacyPolicyMutation, useTermsQuery, useUpdateTermsMutation, useTrustSafetyQuery, useUpdateTrustSafetyMutation, useAboutUsQuery, useUpdateAboutUsMutation , useUpdateOurStoryMutation, useUpdateDataManagementMutation, useUpdateAccountManagementMutation, useUpdatePaymentQueriesMutation} = privacyApi;

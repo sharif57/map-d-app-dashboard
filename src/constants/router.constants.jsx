@@ -26,6 +26,7 @@ import { User2 } from "lucide-react";
 import { TiWorld } from "react-icons/ti";
 import AboutUs from "../pages/Settings/AboutUs";
 import EditAboutUs from "../pages/Settings/EditAboutUs";
+import MangementData from "../Components/MangementData";
 
 export const dashboardItems = [
   {
@@ -52,12 +53,12 @@ export const dashboardItems = [
     element: <AddItem />,
   },
 
-  // {
-  //   name: "Notification",
-  //   path: "notification",
-  //   icon: TbBellRinging,
-  //   element: <Notification />,
-  // },
+  {
+    name: "Management Data",
+    path: "management",
+    icon: BiMessageSquareDetail,
+    element: <MangementData />,
+  },
 
   {
     name: "Setting",
