@@ -1,8 +1,35 @@
-# React + Vite
+# Map D App Dashboard 🗺️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **React + Vite dashboard application** with interactive maps and a responsive UI.
 
-Currently, two official plugins are available:
+🚀 **Live Preview:** [http://72.60.181.145:4173/](http://72.60.181.145:4173/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+## 🚀 Features
+
+- ⚛️ Built with **React + Vite**
+- 🗺️ Interactive map integration
+- 🎨 Styled with **Tailwind CSS**
+- 📱 Fully responsive dashboard layout
+- ⚡ Fast development and build
+- ☁️ Live domain ready
+
+---
+
+## 🧠 Tech Stack
+
+- **React**
+- **Vite**
+- **Tailwind CSS**
+
+---
+
+## 📁 Project Setup
+
+Follow these steps to run the project locally:
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/sharif57/map-d-app-dashboard.git
+cd map-d-app-dashboard
